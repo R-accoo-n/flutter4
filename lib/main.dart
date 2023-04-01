@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter3/models/favorites_model.dart';
 import 'package:flutter3/views/widgets/chats_page.dart';
 import 'package:flutter3/views/widgets/feed_page.dart';
 import 'package:flutter3/views/widgets/post_page.dart';
@@ -6,7 +8,12 @@ import 'package:flutter3/views/widgets/profile_page.dart';
 import 'package:flutter3/views/widgets/search_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FavoriteModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,10 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PageSwitcherChild(),
+      home: PageSwitcher(),
     );
   }
 }
+
 
 class PageSwitcher extends StatefulWidget {
   const PageSwitcher({super.key});
@@ -74,27 +82,6 @@ class _PageSwitcherState extends State<PageSwitcher>
         controller: tabController,
         children: pages,
       ),
-    );
-  }
-}
-
-class PageSwitcherChild extends PageSwitcher{
-  const PageSwitcherChild({super.key});
-
-  @override
-  _PageSwitcherChildState createState() => _PageSwitcherChildState();
-}
-
-class _PageSwitcherChildState extends _PageSwitcherState {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: TabBarView(
-        controller: tabController,
-        children: pages,
-      ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -130,7 +117,6 @@ class _PageSwitcherChildState extends _PageSwitcherState {
     );
   }
 }
-
 
 // class PageSwitcher extends StatefulWidget {
 //   const PageSwitcher({super.key});
@@ -185,6 +171,27 @@ class _PageSwitcherChildState extends _PageSwitcherState {
 //         controller: tabController,
 //         children: pages,
 //       ),
+//     );
+//   }
+// }
+//
+// class PageSwitcherChild extends PageSwitcher{
+//   const PageSwitcherChild({super.key});
+//
+//   @override
+//   _PageSwitcherChildState createState() => _PageSwitcherChildState();
+// }
+//
+// class _PageSwitcherChildState extends _PageSwitcherState {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.black,
+//       body: TabBarView(
+//         controller: tabController,
+//         children: pages,
+//       ),
 //       bottomNavigationBar: BottomNavigationBar(
 //         items: <BottomNavigationBarItem>[
 //           BottomNavigationBarItem(
@@ -220,4 +227,6 @@ class _PageSwitcherChildState extends _PageSwitcherState {
 //     );
 //   }
 // }
-//
+
+
+
