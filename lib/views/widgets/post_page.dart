@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter3/models/favorites_model.dart';
 import 'package:provider/provider.dart';
+
+import '../../providers/favorites_provider.dart';
 
 
 class Post extends StatefulWidget {
@@ -15,7 +16,7 @@ class _PostState extends State<Post> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Consumer<FavoriteModel>(
+          child: Consumer<FavoriteProvider>(
             builder: (context, favorites, child){
               return Text('Total amount of favorite posts: ${favorites.totalAmount}');
             }

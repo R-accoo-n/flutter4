@@ -25,9 +25,7 @@ class _FeedState extends State<Feed>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.white10,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -40,58 +38,44 @@ class _FeedState extends State<Feed>
                 scrollDirection: Axis.horizontal,
                 children: const [
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "All pins"),
                   SizedBox(width: 10),
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "Cats"),
                   SizedBox(width: 10),
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "Dogs"),
                   SizedBox(width: 10),
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "Background"),
                   SizedBox(width: 10),
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "Aesthetic"),
                   SizedBox(width: 10),
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "Tattoo"),
                   SizedBox(width: 10),
                   Text(
-                      textScaleFactor: 0.9,
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                       "Quotes"),
@@ -102,39 +86,42 @@ class _FeedState extends State<Feed>
           ],
         ),
       ),
-      body: Container(
-        color: Colors.white10,
-        child: Column(
-          children: [
-            SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height -
-                    MediaQuery.of(context).size.height * 0.025 -
-                    128,
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A tiny, fluffy kitten peeking out with big, innocent eyes.',
-                                          'id1',
-                                          'assets/images/humberto-arellano-N_G2Sqdy9QY-unsplash.jpg')
-                                  )
-                                  );
-                                },
-                                child: Hero(
-                                  tag: 'id1',
+      body: Column(
+        children: [
+          SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).size.height * 0.025 -
+                  130,
+              child: ListView(
+                padding: EdgeInsets.zero,
+                scrollDirection: Axis.vertical,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A tiny, fluffy kitten peeking out with big, innocent eyes.',
+                                        'id1',
+                                        'assets/images/humberto-arellano-N_G2Sqdy9QY-unsplash.jpg')
+                                )
+                                );
+                              },
+                              child: Hero(
+                                tag: 'id1',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -151,14 +138,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A tiny, fluffy kitten peeking out with big, innocent eyes.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -166,17 +151,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A curious black and white kitten watching a butterfly flutter by.',
-                                          'id2',
-                                          'assets/images/esteban-chinchilla-9m1OFDFAuss-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id2',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A curious black and white kitten watching a butterfly flutter by.',
+                                        'id2',
+                                        'assets/images/esteban-chinchilla-9m1OFDFAuss-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id2',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -193,14 +181,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A curious black and white kitten watching a butterfly flutter by.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -208,17 +194,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A sleepy calico cat snuggled up on a cushion, purring contentedly.',
-                                          'id3',
-                                          'assets/images/jeanie-de-klerk-PAcT-amBgr4-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id3',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A sleepy calico cat snuggled up on a cushion, purring contentedly.',
+                                        'id3',
+                                        'assets/images/jeanie-de-klerk-PAcT-amBgr4-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id3',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -235,14 +224,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A sleepy calico cat snuggled up on a cushion, purring contentedly.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -250,17 +237,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A playful Siamese kitten batting at a feather wand.',
-                                          'id4',
-                                          'assets/images/sajad-nori-s1puI2BWQzQ-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id4',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A playful Siamese kitten batting at a feather wand.',
+                                        'id4',
+                                        'assets/images/sajad-nori-s1puI2BWQzQ-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id4',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -277,14 +267,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A playful Siamese kitten batting at a feather wand.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -292,17 +280,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A tiny, fluffy kitten peeking out with big, innocent eyes.',
-                                          'id5',
-                                          'assets/images/dollar-gill-AyrVL1W0OLo-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id5',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A tiny, fluffy kitten peeking out with big, innocent eyes.',
+                                        'id5',
+                                        'assets/images/dollar-gill-AyrVL1W0OLo-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id5',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -319,14 +310,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A tiny, fluffy kitten peeking out with big, innocent eyes.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -334,17 +323,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A tuxedo cat snuggling up with its owner for a nap.',
-                                          'id6',
-                                          'assets/images/yoo-ho-E3LcqpQxtTU-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id6',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A tuxedo cat snuggling up with its owner for a nap.',
+                                        'id6',
+                                        'assets/images/yoo-ho-E3LcqpQxtTU-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id6',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
@@ -361,14 +353,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A tuxedo cat snuggling up with its owner for a nap.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -376,28 +366,31 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(height: 10),
+                          ],
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A mischievous ginger kitten peeking out from behind a curtain.',
-                                          'id7',
-                                          'assets/images/borna-bevanda-VwqecUsYKvs-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id7',
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A mischievous ginger kitten peeking out from behind a curtain.',
+                                        'id7',
+                                        'assets/images/borna-bevanda-VwqecUsYKvs-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id7',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     children: [
                                       ClipRRect(
@@ -412,14 +405,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A mischievous ginger kitten peeking out from behind a curtain.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -427,17 +418,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A regal black cat surveying its kingdom from atop a bookshelf.',
-                                          'id8',
-                                          'assets/images/anastasiia-rozumna-vi3yGOPBZSY-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id8',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A regal black cat surveying its kingdom from atop a bookshelf.',
+                                        'id8',
+                                        'assets/images/anastasiia-rozumna-vi3yGOPBZSY-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id8',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     children: [
                                       ClipRRect(
@@ -452,14 +446,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A regal black cat surveying its kingdom from atop a bookshelf.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -467,17 +459,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A sweet grey and white cat curled up on a fluffy blanket, with a contented expression.',
-                                          'id9',
-                                          'assets/images/giovanna-gomes-0cyXsESU9yw-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id9',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A sweet grey and white cat curled up on a fluffy blanket, with a contented expression.',
+                                        'id9',
+                                        'assets/images/giovanna-gomes-0cyXsESU9yw-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id9',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     children: [
                                       ClipRRect(
@@ -492,14 +487,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A sweet grey and white cat curled up on a fluffy blanket, with a contented expression.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -507,17 +500,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A cute white kitten with bright blue eyes snuggled up in a cozy sweater.',
-                                          'id10',
-                                          'assets/images/jiawei-zhao-BsXeYX3efOI-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id10',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A cute white kitten with bright blue eyes snuggled up in a cozy sweater.',
+                                        'id10',
+                                        'assets/images/jiawei-zhao-BsXeYX3efOI-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id10',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     children: [
                                       ClipRRect(
@@ -532,14 +528,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A cute white kitten with bright blue eyes snuggled up in a cozy sweater.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -547,17 +541,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A tiny, fluffy kitten peeking out with big, innocent eyes.',
-                                          'id11',
-                                          'assets/images/mikhail-vasilyev-MEb2jandkbc-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id11',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A tiny, fluffy kitten peeking out with big, innocent eyes.',
+                                        'id11',
+                                        'assets/images/mikhail-vasilyev-MEb2jandkbc-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id11',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     children: [
                                       ClipRRect(
@@ -572,14 +569,12 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A tiny, fluffy kitten peeking out with big, innocent eyes.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
                                       )
@@ -587,17 +582,20 @@ class _FeedState extends State<Feed>
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 10),
-                              InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => const DetailPage(
-                                          'A fluffy black and white cat perched on a shelf, peering down with a curious expression.',
-                                          'id12',
-                                          'assets/images/jan-kopriva-IZ7W626JoQs-unsplash.jpg')));
-                                },
-                                child: Hero(
-                                  tag: 'id12',
+                            ),
+                            const SizedBox(height: 10),
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const DetailPage(
+                                        'A fluffy black and white cat perched on a shelf, peering down with a curious expression.',
+                                        'id12',
+                                        'assets/images/jan-kopriva-IZ7W626JoQs-unsplash.jpg')));
+                              },
+                              child: Hero(
+                                tag: 'id12',
+                                child: Material(
+                                  type: MaterialType.transparency,
                                   child: Column(
                                     children: [
                                       ClipRRect(
@@ -612,30 +610,31 @@ class _FeedState extends State<Feed>
                                               child: Text(
                                                   textScaleFactor: 0.7,
                                                   style: TextStyle(
-                                                      color: Colors.white,
                                                       fontWeight:
                                                       FontWeight.bold),
                                                   'A fluffy black and white cat perched on a shelf, peering down with a curious expression.')),
                                           Expanded(
                                               flex: 1,
                                               child: Icon(
-                                                  color: Colors.white,
                                                   Icons.more_horiz))
                                         ],
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ],
-                ))
-          ],
-        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                    ],
+                  ),
+                ],
+              ))
+        ],
       ),
     );
   }

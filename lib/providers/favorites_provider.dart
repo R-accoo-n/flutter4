@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter3/models/post.dart';
 
 
-class FavoriteModel extends ChangeNotifier{
+class FavoriteProvider extends ChangeNotifier{
   final List<Post> _posts = [];
 
   UnmodifiableListView<Post> get posts => UnmodifiableListView(_posts);
@@ -23,5 +23,6 @@ class FavoriteModel extends ChangeNotifier{
 
   void remove(Post post){
     _posts.remove(post);
+    notifyListeners();
   }
 }
