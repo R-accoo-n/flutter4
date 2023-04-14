@@ -109,7 +109,8 @@ class _FeedState extends State<Feed>
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
-                              onTap: () {
+                              onTap: () async {
+                                var res = await
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => const DetailPage(
                                         'A tiny, fluffy kitten peeking out with big, innocent eyes.',
@@ -117,6 +118,7 @@ class _FeedState extends State<Feed>
                                         'assets/images/humberto-arellano-N_G2Sqdy9QY-unsplash.jpg')
                                 )
                                 );
+                                print(res);
                               },
                               child: Hero(
                                 tag: 'id1',

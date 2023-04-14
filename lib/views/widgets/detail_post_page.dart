@@ -39,7 +39,7 @@ class _DetailPageState extends State<DetailPage>{
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pop('Exit from detail screen with id $objectID');
               },
               icon: const Icon(Icons.close))
         ],

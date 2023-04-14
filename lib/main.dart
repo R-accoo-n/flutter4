@@ -7,7 +7,6 @@ import 'package:flutter3/views/widgets/feed_page.dart';
 import 'package:flutter3/views/widgets/post_page.dart';
 import 'package:flutter3/views/widgets/profile_page.dart';
 import 'package:flutter3/views/widgets/search_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +34,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: Provider.of<ThemeProvider>(context).currentTheme,
-          home: const PageSwitcher(),
+          initialRoute: '/',
+          routes: {
+            '/' : (context) => const PageSwitcher(),
+            '/feed' : (context) => const Feed(),
+            '/search' : (context) => const Search(),
+            '/post' : (context) => const Post(),
+            '/chats' : (context) => const Chats(),
+            '/profile' : (context) => const Profile(),
+          },
+          //home: const PageSwitcher(),
 
         );
   }

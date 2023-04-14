@@ -2,13 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter3/providers/favorites_provider.dart';
+import 'package:flutter3/providers/theme_provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
-
-import '../../jsonModels/photo_from_internet.dart';
-import '../../providers/favorites_provider.dart';
-import '../../providers/theme_provider.dart';
 import 'detail_post_page.dart';
 
 class Profile extends StatefulWidget {
@@ -85,26 +82,8 @@ class _ProfileState extends State<Profile>{
 
   List<Widget> rightColumn = [];
 
-
-  Future<PhotoFromInternet> fetchPhoto(http.Client client) async {
-    final response = await client.get(Uri.parse(
-        'https://fastly.picsum.photos/id/1075/200/300.jpg?hmac=pffU5_mFDClpUhsTVng81yHXXvdsGGKHi1jCz2pRsaU'));
-
-    return parsePhotos(response.body);
-  }
-
-
-  PhotoFromInternet parsePhotos(String responseBody) {
-    final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
-
-    return parsed.map<PhotoFromInternet>((json) => PhotoFromInternet.fromJson(json));
-  }
-
-  String avatarImageAddress = '';
-
   @override
   Widget build(BuildContext context) {
-    fetchPhoto(http.Client()).then((value) => avatarImageAddress = value.photoAddress);
     List<Widget> objectsInColumns = generateColumns(context);
 
     leftColumn.removeRange(0, leftColumn.length);
@@ -140,10 +119,9 @@ class _ProfileState extends State<Profile>{
               const SizedBox(
                 height: 30,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 70,
-                backgroundImage: Image.network(avatarImageAddress).image
-                //AssetImage('assets/images/sajad-nori-s1puI2BWQzQ-unsplash.jpg'),
+                backgroundImage: AssetImage('assets/images/sajad-nori-s1puI2BWQzQ-unsplash.jpg'),
               ),
               const SizedBox(
                 height: 10,
@@ -221,10 +199,10 @@ class _ProfileState extends State<Profile>{
                   ),
                   Expanded(
                       flex: 7,
-                      //How to set background color for ClipRRect and change it accoring to current theme using ThemeData?
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Container(
+                          color: Theme.of(context).backgroundColor,
                           height: 40,
                           child: Row(
                             children: const [
